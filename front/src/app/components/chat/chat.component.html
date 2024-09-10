@@ -1,11 +1,11 @@
 <ul>
   <li *ngFor="let item of messageList">
     <p style="color: green" *ngIf="item.message_side === 'sender'">
-      Vous dites :
+      You say
       {{ item.message }}
     </p>
     <p style="color: red" *ngIf="item.message_side === 'receiver'">
-      On vous répond :
+      Their answer
       {{ item.message }}
     </p>
   </li>
@@ -13,10 +13,10 @@
 <div>
   <div>
     <input
-      placeholder="Message..."
+      placeholder="Your message"
       [(ngModel)]="messageInput"
       (keyup.enter)="sendMessage()"
     />
   </div>
-  <button class="btn btn-success" (click)="sendMessage()">Envoyer</button>
+  <button class="btn btn-success" (click)="sendMessage()">Send</button>
 </div>
